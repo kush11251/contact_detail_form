@@ -40,10 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController mobileNoController = TextEditingController();
-  TextEditingController houseNoController = TextEditingController();
-  TextEditingController streetNameController = TextEditingController();
-  TextEditingController districtController = TextEditingController();
-  TextEditingController stateController = TextEditingController();
+  TextEditingController houseNoStreetNameController = TextEditingController();
+  TextEditingController districtStateController = TextEditingController();
   TextEditingController pinCodeController = TextEditingController();
   TextEditingController feedbackController = TextEditingController();
 
@@ -57,10 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
           nameController.text,
           emailController.text,
           mobileNoController.text,
-          houseNoController.text,
-          streetNameController.text,
-          districtController.text,
-          stateController.text,
+          houseNoStreetNameController.text,
+          districtStateController.text,
           pinCodeController.text,
           feedbackController.text);
 
@@ -104,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Form(
                 key: _formKey,
                 child:
-                Padding(padding: EdgeInsets.all(16),
+                Padding(padding: EdgeInsets.all(4),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -147,54 +143,29 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       TextFormField(
-                        controller: houseNoController,
+                        controller: houseNoStreetNameController,
                         validator: (value) {
                           if (value.isEmpty) {
-                            return 'Enter House No';
+                            return 'Enter House No/Street Name';
                           }
                           return null;
                         },
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                            labelText: 'House No'
+                            labelText: 'House No, Street Name'
                         ),
                       ),
                       TextFormField(
-                        controller: streetNameController,
+                        controller: districtStateController,
                         validator: (value) {
                           if (value.isEmpty) {
-                            return 'Enter Valid Street Name';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                            labelText: 'Street Name'
-                        ),
-                      ),
-                      TextFormField(
-                        controller: districtController,
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return 'Enter District';
+                            return 'Enter District/State';
                           }
                           return null;
                         },
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                            labelText: 'District'
-                        ),
-                      ),
-                      TextFormField(
-                        controller: stateController,
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return 'Enter State';
-                          }
-                          return null;
-                        },
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: 'State',
+                            labelText: 'District, Street Name'
                         ),
                       ),
                       TextFormField(

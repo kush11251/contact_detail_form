@@ -2,22 +2,20 @@ class ContactForm {
   String name;
   String email;
   String mobileNo;
-  String houseNo;
-  String streetName;
-  String district;
-  String stateName;
+  String houseNoStreetName;
+  String districtStateName;
   String pinCode;
   String feedback;
 
   ContactForm(this.name, this.email, this.mobileNo,
-      this.houseNo, this.streetName, this.district,
-      this.stateName, this.pinCode, this.feedback);
+      this.houseNoStreetName, this.districtStateName,
+      this.pinCode, this.feedback);
 
   factory ContactForm.fromJson(dynamic json) {
     return ContactForm(
         "${json['name']}", "${json['email']}", "${json['mobileNo']}",
-        "${json['houseNo']}", "${json['streetName']}", "${json['district']}",
-        "${json['stateName']}", "${json['pinCode']}", "${json['feedback']}"
+        "${json['houseNoStreetName']}", "${json['districtStateName']}",
+        "${json['pinCode']}", "${json['feedback']}"
     );
   }
 
@@ -26,10 +24,8 @@ class ContactForm {
     'name': name,
     'email': email,
     'mobileNo': mobileNo,
-    'houseNo': houseNo,
-    'streetName': streetName,
-    'district': district,
-    'stateName': stateName,
+    'houseNoStreetName': houseNoStreetName,
+    'districtStateName': districtStateName,
     'pinCode': pinCode,
     'feedback': feedback
   };
